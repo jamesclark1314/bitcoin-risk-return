@@ -77,8 +77,7 @@ snp_excess = final['S&P'] - final['RF']
 
 btc_mean = btc_excess.mean()*12
 
-snp_mean = snp_excess.mean()
-snp_mean = (1 + snp_mean)**12-1
+snp_mean = snp_excess.mean()*12
 
 btc_stdev = btc_excess.std()*math.sqrt(12)
 snp_stdev = snp_excess.std()*math.sqrt(12)
