@@ -75,8 +75,7 @@ final['S&P Excess'] = final['S&P'] - final['RF']
 btc_excess = final['BTC'] - final['RF']
 snp_excess = final['S&P'] - final['RF']
 
-btc_mean = btc_excess.mean()
-btc_mean = (1 + btc_mean)**12-1
+btc_mean = btc_excess.mean()*12
 
 snp_mean = snp_excess.mean()
 snp_mean = (1 + snp_mean)**12-1
@@ -153,8 +152,7 @@ complete_df = complete_df.iloc[2: , :]
 
 hfr_excess = complete_df['HFR'] - complete_df['RF']
 
-hfr_mean = hfr_excess.mean()
-hfr_mean = (1 + hfr_mean)**12-1
+hfr_mean = hfr_excess.mean()*12
 
 hfr_stdev = hfr_excess.std()*math.sqrt(12)
 hfr_sharpe = hfr_mean/hfr_stdev
