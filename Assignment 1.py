@@ -93,7 +93,6 @@ snp_skew = skew(snp_excess)
 btc_kurtosis = kurtosis(btc_excess)
 snp_kurtosis = kurtosis(snp_excess)
 
-
 # 2
 
 final.plot(y = ['BTC', 'S&P'])
@@ -160,7 +159,9 @@ hfr_kurtosis = kurtosis(hfr_excess)
 
 # Value at Risk
 
-var = hfr_excess.quantile(0.05)
+hfr_var = hfr_excess.quantile(0.05)
+btc_var = btc_excess.quantile(0.05)
+snp_var = snp_excess.quantile(0.05)
 
 # 4
 
@@ -234,7 +235,11 @@ print(f'HFR skew = {hfr_skew}')
 print('')
 print(f'HFR kurtosis = {hfr_kurtosis}')
 print('')
-print(f'Value at Risk = {var}')
+print(f'HFR Value at Risk = {hfr_var}')
+print('')
+print(f'BTC Value at Risk = {btc_var}')
+print('')
+print(f'S&P Value at Risk = {snp_var}')
 print('')
 print(hfr_vs_btc.summary())
 print('')
